@@ -102,6 +102,4 @@ adding a `true_category` column to a sample of your own transactions.
 Python, pandas, scikit-learn (TF-IDF, Multinomial Naive Bayes, Isolation
 Forest), Streamlit, Plotly.
 
-## Author
 
-Riddhi Sharma — B.Tech AI & Data Science, Arya College of Engineering & IT, Jaipur
