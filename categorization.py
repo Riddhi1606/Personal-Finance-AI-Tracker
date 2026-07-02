@@ -13,6 +13,7 @@ model rather than a deep model, since the dataset per user is small
 finance app.
 """
 
+import os
 import joblib
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -55,6 +56,9 @@ def train(df: pd.DataFrame, model_path: str = MODEL_PATH):
     acc = accuracy_score(y_test, preds)
     report = classification_report(y_test, preds, zero_division=0)
 
+    model_dir = os.path.dirname(model_path)
+    if model_dir and not os.path.exists(model_dir):
+        os.makedirs(model_dir, exist_ok=True)
     joblib.dump(pipeline, model_path)
     print(f"Model saved to {model_path}")
     print(f"Test accuracy: {acc:.3f}\n")
