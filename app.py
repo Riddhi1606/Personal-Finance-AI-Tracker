@@ -39,6 +39,14 @@ def load_data(uploaded_file=None):
     if uploaded_file is not None:
         raw = pd.read_csv(uploaded_file)
     else:
+        if not os.path.exists(DATA_PATH):
+            # Sample CSV missing from the deployed repo (e.g. wasn't
+            # uploaded, or .gitignore/upload quirk) - regenerate it on
+            # the fly instead of crashing.
+            os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
+            sys.path.append(os.path.join(os.path.dirname(__file__), "data"))
+            from generate_sample_data import generate
+            generate(out_path=DATA_PATH)
         raw = pd.read_csv(DATA_PATH)
     df = preprocess_transactions(raw)
     return df
