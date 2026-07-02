@@ -4,7 +4,8 @@ An ML-powered personal finance dashboard built for Indian users, with
 UPI-aware transaction cleaning, automatic spend categorization, anomaly
 detection, and next-month spend forecasting.
 
-🔗 **Live demo:** _add your Streamlit Cloud link here after deploying (see "Deploying" section below)_
+🔗 **Live demo:** https://personal-finance-ai-tracker-nfftsityfwfjmsvuxicfgv.streamlit.app/
+
 🔗 **Repo:** https://github.com/riddhi1606/personal-finance-ai-tracker
 
 **Live focus:** most personal finance apps are built for US/EU bank
